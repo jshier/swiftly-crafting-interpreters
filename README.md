@@ -1,2 +1,2 @@
 # swiftly-crafting-interpreters
-A Swift exploration or Crafting Interpreters
+A Swift exploration of Crafting Interpreters
