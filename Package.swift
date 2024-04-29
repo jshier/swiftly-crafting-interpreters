@@ -9,10 +9,14 @@ let package = Package(
         .library(name: "SloxKit", targets: ["SloxKit"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ordo-one/package-benchmark", .upToNextMajor(from: "1.23.0"))
+        .package(url: "https://github.com/ordo-one/package-benchmark", .upToNextMajor(from: "1.23.0")),
+        .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.3.1"))
     ],
     targets: [
-        .executableTarget(name: "slox", dependencies: ["SloxKit"]),
+        .executableTarget(name: "slox", dependencies: [
+            "SloxKit",
+            .product(name: "ArgumentParser", package: "swift-argument-parser")
+        ]),
         .target(name: "SloxKit"),
         .executableTarget(
             name: "slox-bench",
